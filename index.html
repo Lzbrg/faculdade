@@ -1,0 +1,151 @@
+﻿<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+
+    <style type="text/css">
+            
+      html, body {
+          height: 100%;
+          margin: 0;
+        }
+
+        .wrapper {
+          min-height: 100%;
+          margin-bottom: -50px;
+        }
+
+        #footer,
+        .push {
+          height: 50px;
+        }
+
+    </style>
+
+<script type="text/javascript" >
+
+    $(function() {
+        var contadorid=0;
+        console.log( "ready!" );
+        
+        
+        
+        $('#adicionarverde').click(function() {
+               var pessoa = $("#pessoa").val();
+               console.log(pessoa);
+               
+               var html = '<div class="alert alert-success" role="alert" id=componente'+contadorid+'>';
+                   html += pessoa+'<input type=radio name=lista id=lista'+contadorid+'>';
+                   html += '</div>';                
+                contadorid++;
+                
+               $("#verde").append(html);
+               
+        });
+
+         $('#adicionaramarelo').click(function() {
+               var conteudo = $("#verde").text();
+               console.log(conteudo);                   
+                        
+               var html = '<div class="alert alert-warning" role="alert" id=componente'+contadorid+'>';
+                   html += conteudo+'<input type=radio name=lista id=lista'+contadorid+'>';
+                   html += '</div>';
+               contadorid++; 
+                                    
+               $("#amarelo").append(html);
+               
+        });
+             
+             $('#adicionarvermelho').click(function() {
+               var conteudo2 = $("#amarelo").text();
+               console.log(conteudo2);      
+                                     
+               var html = '<div class="alert alert-danger" role="alert" id=componente'+contadorid+'>';
+                   html += conteudo2+'<input type=radio name=lista id=lista'+contadorid+'>';
+                   html += '</div>';
+               contadorid++;
+                                                  
+               $("#vermelho").append(html);
+               
+        }); 
+           
+    });
+</script>
+
+            <title>Hospital Tec Web II</title>
+</head>
+
+    <div class="wrapper">
+    
+<body>
+
+        <div class="card">
+            <div class="card-body">
+        <center>
+        <h2>
+            <small class="text-muted">Sistema de Triagem - Hospital TecWebII</small>
+        </h2>
+        </center>
+            </div>
+        </div>
+
+        <br><br>
+         
+        <div class="input-group mb-3">
+           <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default"> Nome do Paciente:</span>
+           </div>
+                <input type="text" id=pessoa class="form-control"  arial-describedby="inputGroup-sizing-default">
+        </div>
+      
+        <br><br>
+    
+         <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+               <button type="button" class="btn btn-outline-success"  id=adicionarverde>Pouca Urgência</button>
+            </div>  
+             <div class="col-md-auto">
+                <button type="button" class="btn btn-outline-warning" id=adicionaramarelo>Urgência</button>
+             </div>
+            <div class="col-md-auto">
+              <button type="button" class="btn btn-outline-danger"    id=adicionarvermelho>Emergência</button>
+            </div>
+         </div>
+        </div>
+    
+     <br><br>
+
+        <div class=container>
+          <div class="row justify-content-md-center">
+                <div class="col-md-auto" id=verde>                
+                </div>          
+                <div class="col-md-auto" id=amarelo>                
+                </div>
+                <div class="col-md-auto" id=vermelho>
+                </div>        
+          </div>
+        </div>
+
+    <div class="push"></div>
+    </div>   
+   
+   <div class="card">
+   <footer id="footer" class="card-body">
+   <center><h6> Luiz Brigida - Trabalho de Tecnologia Web II &copy;<h6></center>
+   </footer>
+   </div>
+
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ 
+
+</body>
+</html>
